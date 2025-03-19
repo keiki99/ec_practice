@@ -12,12 +12,12 @@
 
   <body>
 
-    <%= render "layouts/always_header" %>
-
-    <% unless customer_signed_in? %>
-      <%= render "layouts/during_logout" %>
-    <% else %>
+    <% if customer_signed_in? %>
       <%= render "layouts/during_login" %>
+    <% elsif admin_signed_in? %>
+      <%= render "layouts/during_admin_login" %>
+    <% else %>
+      <%= render "layouts/during_logout" %>
     <% end %>
 
     <%= yield %>

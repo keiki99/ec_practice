@@ -1,4 +1,16 @@
 <p>
+<%= link_to root_path do %>
+  トップ
+<% end %>
+</p>
+
+<p>
+<%= link_to about_path do %>
+  アバウト
+<% end %>
+</p>
+
+<p>
 <%= link_to destroy_customer_session_path, method: :delete do %>
   ログアウト
 <% end %>
