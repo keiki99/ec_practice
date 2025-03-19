@@ -30,7 +30,7 @@ class Public::SessionsController < Devise::SessionsController
   end
 
   def after_sign_out_path_for(resource) #ログアウト後の遷移先を設定
-    about_path
+    root_path
   end
   
 end
