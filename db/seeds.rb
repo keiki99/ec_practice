@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "seedの実行を開始しました"
+
+yamaguchi = Customer.find_or_create_by!(email: "adoresu@g.com") do |customer|
+  customer.last_name = "山口"
+  customer.first_name = "卓也"
+  customer.last_name_kana = "ヤマグチ"
+  customer.first_name_kana = "タクヤ"
+  customer.postal_code = "7930043"
+  customer.address = "愛媛"
+  customer.telephone_number = "09099990000"
+  customer.password = "pasuwado"
+end
+
+puts "seedの実行が完了しました"

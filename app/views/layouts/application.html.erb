@@ -11,6 +11,17 @@
   </head>
 
   <body>
+
+    <% unless customer_signed_in? %>
+      <%= link_to new_customer_session_path do %>
+        ログイン
+      <% end %>
+    <% else %>
+      <%= link_to destroy_customer_session_path, method: :delete do %>
+        ログアウト
+      <% end %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
