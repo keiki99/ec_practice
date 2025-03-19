@@ -11,9 +11,11 @@ Rails.application.routes.draw do
 
   get '/admin' => 'admin/homes#top' #管理者用トップページをget
 
-  scope module: :public do #-----------------------------------------------以下 エンドユーザー用コントローラ・アクションの記述------------------------
+  scope module: :public do #-----------------------------------------------以下 顧客用コントローラ・アクションの記述------------------------
     root to: "homes#top" #サイトを開いて最初に表示されるトップページをget
-    get 'homes/about' => 'homes#about', as:'about' #aboutページをget
+    get 'homes/about' => 'homes#about', as:'about' #アバウトページをget
+
+    get 'customers/my_page' => 'customers#show' #マイページをget
   end
 
   # for details on the dsl available within this file, see https://guides.rubyonrails.org/routing.html
