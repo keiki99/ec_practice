@@ -63,4 +63,8 @@ class Public::RegistrationsController < Devise::RegistrationsController
   def configure_sign_up_params #ユーザーの新規登録時に、姓・名・姓（カナ）・名（カナ）・郵便番号・住所・電話番号の値を登録情報として許可
     devise_parameter_sanitizer.permit(:sign_up, keys: [:last_name, :first_name, :last_name_kana, :first_name_kana, :postal_code, :address, :telephone_number])
   end
+
+  def after_sign_up_path_for(resource) #新規登録後の遷移先を設定
+    customers_my_page_path
+  end
 end
