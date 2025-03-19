@@ -9,5 +9,10 @@ Rails.application.routes.draw do
     sessions: "public/sessions"
   }
 
+  scope module: :public do #-----------------------------------------------以下 エンドユーザー用コントローラ・アクションの記述------------------------
+    root to: "homes#top" #サイトを開いて最初に表示されるトップページへのルーティング
+
+  end
+
   # for details on the dsl available within this file, see https://guides.rubyonrails.org/routing.html
 end
