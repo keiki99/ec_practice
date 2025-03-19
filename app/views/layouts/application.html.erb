@@ -13,16 +13,9 @@
   <body>
 
     <% unless customer_signed_in? %>
-      <%= link_to new_customer_registration_path do %>
-        新規登録
-      <% end %>
-      <%= link_to new_customer_session_path do %>
-        ログイン
-      <% end %>
+      <%= render "layouts/during_logout" %>
     <% else %>
-      <%= link_to destroy_customer_session_path, method: :delete do %>
-        ログアウト
-      <% end %>
+      <%= render "layouts/during_login" %>
     <% end %>
 
     <%= yield %>
