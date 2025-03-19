@@ -19,4 +19,8 @@ yamaguchi = Customer.find_or_create_by!(email: "adoresu@g.com") do |customer|
   customer.password = "pasuwado"
 end
 
+example = Admin.find_or_create_by!(email: "admin@example.com") do |admin|
+  admin.password = "adminpasuwado"
+end
+
 puts "seedの実行が完了しました"
