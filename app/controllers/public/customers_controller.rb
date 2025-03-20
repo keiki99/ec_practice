@@ -6,4 +6,7 @@ class Public::CustomersController < ApplicationController
 
   def edit #マイページ編集画面を表示
   end
+
+  def unsubscribe #退会確認画面を表示
+  end
 end
