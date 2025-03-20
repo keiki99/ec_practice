@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
     get 'customers/my_page' => 'customers#show' #マイページをget
     get 'customers/information/edit' => 'customers#edit' #マイページの編集画面をget
+    get 'customers/unsubscribe' => 'customers#unsubscribe' #退会確認画面をget
   end
 
   # for details on the dsl available within this file, see https://guides.rubyonrails.org/routing.html
