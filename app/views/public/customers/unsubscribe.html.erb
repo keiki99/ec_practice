@@ -1,1 +1,9 @@
-<h1>退会確認画面</h1>
+<h1>本当に退会するんですか？ ホントに？ ホントのホントに？</h1>
+
+<%= link_to customers_my_page_path do %>
+  退会しない
+<% end %>
+
+<%= link_to customers_withdraw_path, method: :patch do %>
+  退会する
+<% end %>

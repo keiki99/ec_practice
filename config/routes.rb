@@ -15,9 +15,10 @@ Rails.application.routes.draw do
     root to: "homes#top" #サイトを開いて最初に表示されるトップページをget
     get 'homes/about' => 'homes#about', as:'about' #アバウトページをget
 
-    get 'customers/my_page' => 'customers#show' #マイページをget
-    get 'customers/information/edit' => 'customers#edit' #マイページの編集画面をget
-    get 'customers/unsubscribe' => 'customers#unsubscribe' #退会確認画面をget
+    get 'customers/my_page' => 'customers#show' #マイページを表示
+    get 'customers/information/edit' => 'customers#edit' #マイページの編集画面を表示
+    get 'customers/unsubscribe' => 'customers#unsubscribe' #退会確認画面を表示
+    patch 'customers/withdraw' => 'customers#withdraw' #退会処理
   end
 
   # for details on the dsl available within this file, see https://guides.rubyonrails.org/routing.html
