@@ -4,12 +4,19 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
 
+  get '/admin' => 'admin/homes#top' #管理者用トップページをget
+
+  namespace :admin do #-----------------------------------------------以下 管理者用コントローラ・アクションの記述------------------------
+    resources :genres, only: [:index, :create]
+
+  end
+
+#===================================================================================================================================================
+
   devise_for :customers, skip: [:passwords], controllers: {  #顧客用のdeviseルーティング 今回はパスワード変更機能は不要
     registrations: "public/registrations",
     sessions: "public/sessions"
   }
-
-  get '/admin' => 'admin/homes#top' #管理者用トップページをget
 
   scope module: :public do #-----------------------------------------------以下 顧客用コントローラ・アクションの記述------------------------
     root to: "homes#top" #サイトを開いて最初に表示されるトップページをget
