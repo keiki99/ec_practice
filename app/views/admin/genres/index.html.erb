@@ -12,7 +12,11 @@
   <% @genres.each do |genre| %>
     <tr>
       <td><%= genre.name %></td>
-      <td>編集</td>
+      <td>
+        <%= link_to edit_admin_genre_path(genre.id) do %>
+          編集
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/admin' => 'admin/homes#top' #管理者用トップページをget
 
   namespace :admin do #-----------------------------------------------以下 管理者用コントローラ・アクションの記述------------------------
-    resources :genres, only: [:index, :create]
+    resources :genres, only: [:index, :create, :edit, :update]
 
   end
 
