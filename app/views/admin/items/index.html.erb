@@ -1,0 +1,18 @@
+<h1>商品一覧</h1>
+
+<table class="table">
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.id %></td>
+      <td><%= item.name %></td>
+      <td><%= item.price %></td>
+      <td><%= item.genre_id %></td>
+      <td><%= item.is_active %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%= link_to new_admin_item_path do %>
+  新規登録
+<% end %>
