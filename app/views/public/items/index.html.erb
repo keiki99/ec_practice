@@ -1,0 +1,9 @@
+<h1>商品一覧</h1>
+
+<% @items.each do |item| %>
+
+    <%= image_tag item.get_image(100, 100) %>
+    <p>商品名 : <%= item.name %></p>
+    <p>￥<%= item.price * 1.1 %>円</p>
+
+<% end %>
