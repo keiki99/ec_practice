@@ -7,4 +7,6 @@
 <p>販売ステータス : <%= @item.is_active %></p>
 
 
-<p>編集</p>
+<%= link_to edit_admin_item_path(@item.id) do %>
+    編集する
+<% end %>
