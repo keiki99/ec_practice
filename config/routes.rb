@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :admin do #-----------------------------------------------以下 管理者用コントローラ・アクションの記述------------------------
     resources :genres, only: [:index, :create, :edit, :update]
     resources :items, only: [:index, :new, :create, :show, :edit, :update]
+    resources :customers, only: [:index, :show, :edit, :update]
 
   end
 
