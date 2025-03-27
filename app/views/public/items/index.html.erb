@@ -2,8 +2,10 @@
 
 <% @items.each do |item| %>
 
-    <%= image_tag item.get_image(100, 100) %>
-    <p>商品名 : <%= item.name %></p>
+    <%= link_to item_path(item.id) do %>
+        <%= image_tag item.get_image(100, 100) %>
+        <p>商品名 : <%= item.name %></p>
+    <% end %>
     <p>￥<%= item.price * 1.1 %>円</p>
 
 <% end %>
